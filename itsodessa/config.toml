@@ -1,6 +1,0 @@
-baseURL = 'http://odessar.github.io/itsodessa/'
-theme        = "hello-friend-ng"
-paginate     = 10
-languageCode = 'en-us'
-title = 'Hello, I am Odessa'
-publishDir = "docs"
