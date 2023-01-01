@@ -1,9 +1,11 @@
-baseURL = 'http://odessar.github.io/'
+baseURL = 'https://odessar.github.io/'
 theme        = "hello-friend-ng"
 paginate     = 10
 languageCode = 'en-us'
 title = 'Hello, I am Odessa'
 
+[author]
+  name = "Odessa Ren"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -13,6 +15,7 @@ title = 'Hello, I am Odessa'
     # Enable to show reading time in minutes for posts
   showReadingTime = true
 
+  enableThemeToggle = true
 
   # Subtitle for home
   homeSubtitle = "Software Engineer and Data Addict"
@@ -46,8 +49,23 @@ title = 'Hello, I am Odessa'
       logoHomeLink = "/"
     # or
     #
-    # path = "/img/your-example-logo.svg"
+    # path = "/assets/cloud-computing.svg"
     # alt = "Your example logo alt text"
+    
+[params.footer]
+  trademark = true
+  copyright = false
+  author = true
+  topText = []
+  bottomText = [
+    "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+    "Theme <a href=\"https://github.com/rhazdon\">hello-friend-ng</a>"
+  ]
+
+[params.favicon.color]
+  mask = "#1b1c1d"
+  msapplication = "#1b1c1d"
+  theme = "#1b1c1d"
 
 [[params.social]]
   name = "github"
@@ -69,3 +87,7 @@ title = 'Hello, I am Odessa'
     identifier = "about"
     name       = "About"
     url        = "/about"
+    [[menu.main]]
+    identifier = "reading"
+    name       = "Reading List"
+    url        = "/readings"
