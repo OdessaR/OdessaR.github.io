@@ -18,7 +18,7 @@ title = 'Hello, I am Odessa'
   enableThemeToggle = true
 
   # Subtitle for home
-  homeSubtitle = "Software Engineer and Data Addict"
+  homeSubtitle = "Software Engineer and Data Addict @NL"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -39,7 +39,7 @@ title = 'Hello, I am Odessa'
 [languages]
   [languages.en]
     title = "Hello, I am Odessa"
-    subtitle = "Software Engineer and Data Addict"
+    subtitle = "Software Engineer and Data Addict @NL"
     keywords = ""
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
@@ -83,10 +83,7 @@ title = 'Hello, I am Odessa'
     identifier = "post"
     name       = "Posts"
     url        = "/posts"
-  [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about"
+
     [[menu.main]]
     identifier = "reading"
     name       = "Reading List"
