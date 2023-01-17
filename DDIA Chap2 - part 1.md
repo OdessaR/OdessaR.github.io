@@ -82,7 +82,11 @@ Document databases are more accuratly described as *schema-on-read* (this is sim
 
 ###### Data locality for queries
 
+Locality is referring to the tendency for data and instruction accesses to cluster in certain regions of memory. And a document is usually stored as a single continuous string. Therefore, if the application **often** needs access to the **entire document**, there is a performance advantage to this **storage locality**.
+Also note that not only document model has the idea of grouping related data together for locality. For example ,Google's Spanner database (rows should be nested within a parent table), Oracle (multi-table0index cluster tables), Bugtable data model (column-family).
+
 ###### Convergence of document and relational databases
 
+The document and relational databases are becoming more similar and complement each other.
 
 
