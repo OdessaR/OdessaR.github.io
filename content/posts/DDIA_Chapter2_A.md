@@ -1,3 +1,14 @@
+---
+title: "Designing Data Intensive Applications Chapter2 partA"
+date: 2023-01-07T22:01:27+01:00
+draft: false
+toc: false
+images:
+tags:
+  - readingnotes
+  - systemdesign
+---
+
 ## Data Models and Query Languages
 
 The key question for each layer of data model is: how is it represented in terms of the next-lower layer? E.g.:
@@ -19,21 +30,21 @@ Relational databases turned out to generalize very well
 
 #### The birth of NoSQL
 
-Driving forces behind *NoSQL* (origin as open source, distributed, nonrelational databases meetup):
+Driving forces behind *NoSQL* (origin as open source, distributed, non-relational databases meetup):
 1. Scalability. Very large datasets or very high write throughput
 2. Free and open source software
 3. Specialized query operations
-4. Less retrictions and more dynamic and expressive
+4. Less restrictions and more dynamic and expressive
 
 #### The Object-Relational Mismatch
 
 The impedance mismatch between Object-oriented programming languages and relational tables for data storage.
 
-JSON representation makes the tree sturcture of the data relationship explicit.
+JSON representation makes the tree structure of the data relationship explicit.
 
 Storing geographic information is better to have standarized structured data (regions, industries, etc), we could ask user to choose from a drop-down list or autocompleter. 
 
-The advantage to user ID (instead of free-formed text) is that it has no meaning to humans. There fore, the ID can remain the same even if the information it identifies changes. In this way, we can reduce the duplicated redundant copies to be updated with plain-text format. Removing such duplication is the key idea behind *normalization* in database.
+The advantage to user ID (instead of free-formed text) is that it has no meaning to humans. Therefore, the ID can remain the same even if the information it identifies changes. In this way, we can reduce the duplicated redundant copies to be updated with plain-text format. Removing such duplication is the key idea behind *normalization* in database.
 	- As a rule of thumb, if you are duplicating values that could be stored in just one place, the schema is not normalized. (Part III will discuss further with the normalization and denormalization topic)
 Easy to join for difference databases:
 - In relational databases, it's normal to refer to rows in other tables by ID, because joins are easy
@@ -54,10 +65,10 @@ Resume example:
 	- The **problem** was that they made the code for querying and updating the database complicated and inflexible. Changing access path means a lot of changes for handwritten database query code and rewriting to handle the new access path. It was difficult to make changes to an application's data model.
 - The relational model 
 	- A relation is simply a collection of tuples. 
-	- Query optimizer automatically decides the "access path" (which parts of the query to execute in which order and which indexes to use)
+	- Query optimiser automatically decides the "access path" (which parts of the query to execute in which order and which indexes to use)
 	- Much easier to add new features to applications
-- Comparison to ducument databases
-	- Relational and document databases are not fundamentally different, the related item is referenced by a unique identifier, which is called a *foreign key* inthe relational model, and *document reference* in the document model. (Conclusion: document db is following the old path of CODASYL) 
+- Comparison to document databases
+	- Relational and document databases are not fundamentally different, the related item is referenced by a unique identifier, which is called a *foreign key* in the relational model, and *document reference* in the document model. (Conclusion: document db is following the old path of CODASYL) 
 ##### Relational vs Document databases today
 
 \* Here only the differences in the data model is discussed.
@@ -75,15 +86,15 @@ Advantages for the two databases:
 	
 ###### Schema flexibility in the document model
 
-Most document databaes, and the JSON support in relational databases, do not enforce any schema on the data in documents. Clients have no guarantees as to what fields the documents may contain.
+Most document database, and the JSON support in relational databases, do not enforce any schema on the data in documents. Clients have no guarantees as to what fields the documents may contain.
 
-Document databases are more accuratly described as *schema-on-read* (this is similar to dynamic type checking in programming languages), while in traditional approach of relational database it is *schema-on-write* (static type checking).
+Document databases are more accurately described as *schema-on-read* (this is similar to dynamic type checking in programming languages), while in traditional approach of relational database it is *schema-on-write* (static type checking).
 
 
 ###### Data locality for queries
 
 Locality is referring to the tendency for data and instruction accesses to cluster in certain regions of memory. And a document is usually stored as a single continuous string. Therefore, if the application **often** needs access to the **entire document**, there is a performance advantage to this **storage locality**.
-Also note that not only document model has the idea of grouping related data together for locality. For example ,Google's Spanner database (rows should be nested within a parent table), Oracle (multi-table0index cluster tables), Bugtable data model (column-family).
+Also note that not only document model has the idea of grouping related data together for locality. For example ,Google's Spanner database (rows should be nested within a parent table), Oracle (multi-table0index cluster tables), Bigtable data model (column-family).
 
 ###### Convergence of document and relational databases
 
